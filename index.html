@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStyle.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Advent+Pro:wght@100&family=Amatic+SC:wght@700&family=Bangers&family=Bebas+Neue&family=Bungee&family=Bungee+Hairline&family=Bungee+Inline&family=Bungee+Shade&family=Cinzel&family=Fascinate&family=Great+Vibes&family=Homemade+Apple&family=Julius+Sans+One&family=Limelight&family=Londrina+Shadow&family=Luckiest+Guy&family=Major+Mono+Display&family=Monoton&family=Montserrat+Alternates:wght@100&family=Oi&family=Orbitron&family=Permanent+Marker&family=Poiret+One&family=Rajdhani&family=Six+Caps&family=Syncopate&family=The+Nautigal:wght@700&family=Titan+One&family=Ultra&family=Wire+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bubble-menus.css">
+    <link rel="stylesheet" href="css/Palette.css">
+    <link rel="stylesheet" href="css/Fonts.css">
+    <link rel="stylesheet" href="css/Toolkit.css">
+    <script async src="js/Palette.js"></script>
+    <script async src="js/Fonts.js"></script>
+    <script async src="js/main.js"></script>
+</head>
+<body>
+    <menu class="side-menu">
+        <button class="menu-button" onclick = "toggleToolKit()">X</button>
+            <div class="side-menu-inner-wrap">
+                <div class="toolkit-color-wrap">
+                    <h4>ToolKit</h4>
+                    <h5>Palette</h5>
+                    <div class="user-palette toolkit-palette">
+                        <div class="palette-wrap">
+                            <button class="item1"></button>
+                            <button class="item2"></button>
+                            <button class="item3"></button>
+                            <button class="item4"></button>
+                            <button class="item5"></button>
+                        </div>
+                    </div>
+                    <h5>Fonts</h5>
+                </div>
+
+                <div class="toolkit-font-wrap">
+                    <div class="fonts-container"> 
+                    </div>
+                </div>
+
+                <div class="toolkit-message-wrap">
+                    <p class="toolkit-message">Choose some fonts to get started!</p>
+                </div>
+        </div>
+      </menu>
+
+    <!--Main Content-->
+    <main class="maincontent"> 
+        <header class="siteheader">
+            <div class="site-title">WebStyle</div>
+            <div class="site-description">A simple web app for trying out different font/color combinations!</div>
+            <nav class="main-navbar">
+                <ul>
+                    <li><button class="nav-btn btn0" onclick="togglePage('.fonts-page')">Fonts</button></li>
+                    <li><button class="nav-btn btn1" onclick="togglePage('.colors-page')">Colors</button></li>
+                    <li><button class="nav-btn btn2 active-btn" onclick="togglePage('.try-it-page')">Test Page</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="try-it-page">
+        <h1 class="pageHeader">Try it out!</h1>
+            
+        <!--Section 1-->
+        <section class="section1">
+            <div class="content-wrap">
+                <!--Toggle-able menu for section 1 heading-->
+                <div class="element-wrap">
+                    <div class="collapse-menu-wrap">
+                        <button class="menuButton-outer" onclick = "toggleVisibility('.s1-h', 'inline-block')">+</button>
+                        <div class="styleMenu s1-h">
+                            <button class="menuButton-inner" onclick = "toggleVisibility('.s1-h', 'inline-block')">x</button>
+                            <h5>Color</h5>
+                            <div class="color-wrap">
+                                <div class="user-palette">
+                                    <div class="palette-wrap">
+                                        <button class="item1" onclick="updateCSS('.section-1-heading','color',getUserPaletteColor(0));"></button>
+                                        <button class="item2" onclick="updateCSS('.section-1-heading','color',getUserPaletteColor(1));"></button>
+                                        <button class="item3" onclick="updateCSS('.section-1-heading','color',getUserPaletteColor(2));"></button>
+                                        <button class="item4" onclick="updateCSS('.section-1-heading','color',getUserPaletteColor(3));"></button>
+                                        <button class="item5" onclick="updateCSS('.section-1-heading','color',getUserPaletteColor(4));"></button>
+                                    </div>
+                                </div>
+                                <div class="color-picker">
+                                    <label for="section1HeadingColor"></label>
+                                    <input type="color" id="section1HeadingColor" class="picker" value="#fae1fc" onInput="updateCSS('.section-1-heading','color',this.value)">   
+                                </div>
+                            </div>
+                            <form class="font-selector">
+                                <label for="section1HeadingFont">Font</label>
+                                <select id="section1HeadingFont" class="select-options"
+                                form="section1Headingform" onChange="updateCSS('.section-1-heading','font-family',`var(--${this.value})`)">
+                                <option value="">No fonts chosen yet</option>    
+                            </select> 
+                            </form>
+                        </div>
+                    </div>
+                    <h2 class="section-1-heading">Alice in Wonderland</h2>
+                </div>
+                <!--Toggle-able menu for section 1 subheading-->
+                <div class="element-wrap">
+                    <div class="collapse-menu-wrap">
+                        <button class="menuButton-outer" onclick = "toggleVisibility('.s1-sh', 'inline-block')">+</button>
+                        <div class="styleMenu s1-sh">
+                            <button class="menuButton-inner" onclick = "toggleVisibility('.s1-sh', 'inline-block')">x</button>
+                            <h5>Color</h5>
+                            <div class="color-wrap">
+                                <div class="user-palette">
+                                    <div class="palette-wrap">
+                                        <button class="item1" onclick="updateCSS('.section-1-subheading','color',getUserPaletteColor(0));"></button>
+                                        <button class="item2" onclick="updateCSS('.section-1-subheading','color',getUserPaletteColor(1));"></button>
+                                        <button class="item3" onclick="updateCSS('.section-1-subheading','color',getUserPaletteColor(2));"></button>
+                                        <button class="item4" onclick="updateCSS('.section-1-subheading','color',getUserPaletteColor(3));"></button>
+                                        <button class="item5" onclick="updateCSS('.section-1-subheading','color',getUserPaletteColor(4));"></button>
+                                    </div>
+                                </div>
+                                <div class="color-picker">
+                                    <label for="section1SubHeadingColor">Color</label>
+                                    <input type="color" id="section1SubHeadingColor" class="picker" value="#fae1fc" onInput="updateCSS('.section-1-subheading','color',this.value)">
+                                </div>
+                            </div>
+                            <form class="font-selector">
+                                <label for="section1SubHeadingFont">Font</label>
+                                <select id="section1SubHeadingFont" class="select-options"
+                                form="section1SubHeadingform" onChange="updateCSS('.section-1-subheading','font-family',`var(--${this.value})`)">
+                                <option value="">No fonts chosen yet</option>
+                                </select> 
+                            </form>
+
+                        </div>
+                    </div>
+                    <h3 class="section-1-subheading">Written by Lewis Carroll</h3>
+                </div>
+                <!--Toggle-able menu for section 1 paragraph-->
+                <div class="element-wrap">
+                    <div class="collapse-menu-wrap">
+                        <button class="menuButton-outer" onclick = "toggleVisibility('.s1-p', 'inline-block')">+</button>
+                        <div class="styleMenu s1-p">
+                            <button class="menuButton-inner" onclick = "toggleVisibility('.s1-p', 'inline-block')">x</button>
+                            <h5>Color</h5>
+                            <div class="color-wrap">
+                                <div class="user-palette">
+                                    <div class="palette-wrap">
+                                        <button class="item1" onclick="updateCSS('.section-1-paragraph','color',getUserPaletteColor(0));"></button>
+                                        <button class="item2" onclick="updateCSS('.section-1-paragraph','color',getUserPaletteColor(1));"></button>
+                                        <button class="item3" onclick="updateCSS('.section-1-paragraph','color',getUserPaletteColor(2));"></button>
+                                        <button class="item4" onclick="updateCSS('.section-1-paragraph','color',getUserPaletteColor(3));"></button>
+                                        <button class="item5" onclick="updateCSS('.section-1-paragraph','color',getUserPaletteColor(4));"></button>
+                                    </div>
+                                </div>
+                                <div class="color-picker">
+                                    <input type="color" id="section1ParagraphColor" class="picker" value="#fae1fc" onInput="updateCSS('.section-1-paragraph','color',this.value)">
+                                    <label for="section1ParagraphColor">Color:</label>
+                                </div>
+                            </div>
+                            <form class="font-selector">
+                                <label for="section1paragrpahFont">Font:</label>
+                                <select id="section1paragrpahFont" class="select-options"
+                                form="section1paragrpahform" onChange="updateCSS('.section-1-paragraph','font-family',`var(--${this.value})`)">
+                                <option value="">No fonts chosen yet</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="section-1-paragraph">The rabbit-hole went straight on like a tunnel for some way, 
+                        and then dipped suddenly down, so suddenly that Alice had not a 
+                        moment to think about stopping herself before she found herself 
+                        falling down a very deep well.  Either the well was very deep, 
+                        or she fell very slowly, for she had plenty of time as she went
+                        down to look about her and to wonder what was going to happen 
+                        next. First, she tried to look down and make out what she was 
+                        coming to, but it was too dark to see anything; then she looked 
+                        at the sides of the well, and noticed that they were filled with 
+                        cupboards and book-shelves; here and there she saw maps and pictures 
+                        hung upon pegs. She took down a jar from one of the shelves as she 
+                        passed; it was labelled “ORANGE MARMALADE”, but to her great 
+                        disappointment it was empty: she did not like to drop the jar for 
+                        fear of killing somebody underneath, so managed to put it into one 
+                        of the cupboards as she fell past it.</p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <div class="colors-page">
+            <h1 class="pageHeader">Colors</h1>
+            <section class="section1">
+                <h2>Generate a Random Palette</h2>
+                <div class="content-wrap">
+                    <div class="random-palette">
+                        <div class="palette-wrap">
+                            <div class="item1"></div>
+                            <div class="item2"></div>
+                            <div class="item3"></div>
+                            <div class="item4"></div>
+                            <div class="item5"></div>
+                        </div>
+                    </div>
+                    <button class="random-palette-button" onclick = "getRandomColorPalette()">Randomize</button>
+                    <button class="add-to-palette-button" onclick = "setUserPalette(random)">Use this Palette</button>
+                </div>
+            </section>
+            <section class="section2">
+                <div class="content-wrap">
+                    <h2>Popular Palettes</h2>
+                    <h3>Rainbow</h3>
+                    <div class="rainbow-palette">
+                        <div class="palette-wrap">
+                            <div class="item1"></div>
+                            <div class="item2"></div>
+                            <div class="item3"></div>
+                            <div class="item4"></div>
+                            <div class="item5"></div>
+                        </div>
+                    </div>
+                    <button class="add-to-palette-button" onclick = "setUserPalette(rainbow)">Use this Palette</button>
+                        
+                        <h3>Berry</h3>
+                        <div class="berry-palette">
+                            <div class="palette-wrap">
+                                <div class="item1"></div>
+                                <div class="item2"></div>
+                                <div class="item3"></div>
+                                <div class="item4"></div>
+                                <div class="item5"></div>
+                            </div>
+                        </div>
+                        <button class="add-to-palette-button" onclick = "setUserPalette(berry)">Use this Palette</button>
+                        
+                        <h3>Ocean</h3>
+                        <div class="ocean-palette">
+                            <div class="palette-wrap">
+                                <div class="item1"></div>
+                                <div class="item2"></div>
+                                <div class="item3"></div>
+                                <div class="item4"></div>
+                                <div class="item5"></div>
+                            </div>  
+                        </div>
+                        <button class="add-to-palette-button" onclick = "setUserPalette(ocean)">Use this Palette</button>
+                    </div>
+            </section>
+        </div>
+
+        <div class="fonts-page">
+            <h1 class="pageHeader">Fonts</h1>
+            <h2>Select up to ten fonts for your ToolKit!</h2>
+            <section class="section1">
+                <div class="font-card-container">
+                    <div class="font-card">
+                        <p style="font-family: var(--AbrilFatface)" >Abril Fatface</p>
+                        <button onclick="addToFontList('AbrilFatface')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--AdventPro)">Advent Pro</p>
+                        <button onclick="addToFontList('AdventPro')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--AnimaticSC)">Animatic SC</p>
+                        <button onclick="addToFontList('AnimaticSC')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bangers)">Bangers</p>
+                        <button onclick="addToFontList('Bangers')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bebas-Nueue)">Bebas Nueue</p>
+                        <button onclick="addToFontList('Bebas-Nueue')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee)">Bungee</p>
+                        <button onclick="addToFontList('Bungee')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungree-Hairline)">Bungree Hairline</p>
+                        <button onclick="addToFontList('Bungree-Hairline')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee-Inline)">Bungree Inline</p>
+                        <button onclick="addToFontList('Bungee-Inline')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee-Shade)">Bungree Shade</p>
+                        <button onclick="addToFontList('Bungee-Shade')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Cinzel)">Cinzel</p>
+                        <button onclick="addToFontList('Cinzel')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Fascinate)">Fascinate</p>
+                        <button onclick="addToFontList('Fascinate')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Great-Vibes)">Great Vibes</p>
+                        <button onclick="addToFontList('Great-Vibes')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Homeade-Apple)">Homeade Apple</p>
+                        <button onclick="addToFontList('Homeade-Apple')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Julius-Sans-One)">Julius Sans One</p>
+                        <button onclick="addToFontList('Julius-Sans-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Limelight)">Limelight</p>
+                        <button onclick="addToFontList('Limelight')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Londrina-Shadow)">Londrina Shadow</p>
+                        <button onclick="addToFontList('Londrina-Shadow')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Luckiest-Guy)">Luckiest Guy</p>
+                        <button onclick="addToFontList('Luckiest-Guy')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Major-Mono-Display)">Major Mono Display</p>
+                        <button onclick="addToFontList('Major-Mono-Display')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Monoton)">Monoton</p>
+                        <button onclick="addToFontList('Monoton')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Montserrat-Alternates)">Montserrat Alternates</p>
+                        <button onclick="addToFontList('Montserrat-Alternates')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Oi)">Oi</p>
+                        <button onclick="addToFontList('Oi')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Orbitron)">Orbitron</p>
+                        <button onclick="addToFontList('Orbitron')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Permanent-Marker)">Permanent-Marker</p>
+                        <button onclick="addToFontList('Permanent-Marker')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Poiret-One)">Poiret One</p>
+                        <button onclick="addToFontList('Poiret-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Rajdhani)">Rajdhani</p>
+                        <button onclick="addToFontList('Rajdhani')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Six-Caps)">Six-Caps</p>
+                        <button onclick="addToFontList('Six-Caps')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Syncopate)">Syncopate</p>
+                        <button onclick="addToFontList('Syncopate')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--The-Nautigal)">The Nautigal</p>
+                        <button onclick="addToFontList('The-Nautigal')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Titan-One)">Titan One</p>
+                        <button onclick="addToFontList('Titan-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Ultra)">Ultra</p>
+                        <button onclick="addToFontList('Ultra')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Wire-One)">Wire One</p>
+                        <button onclick="addToFontList('Wire-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card-filler">
+                    </div>
+                    <div class="font-card-filler">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <p>Designed and built by Laura Hiller.</p> 
+    </footer>
+</body>
+</html>
+
+<!--
+    <div class="fonts-page">
+            <h1 class="pageHeader">Fonts</h1>
+            <h2>Select up to ten fonts for your ToolKit!</h2>
+            <section class="section1">
+                <div class="font-card-container">
+                    <div class="font-card">
+                        <p style="font-family: var(--AbrilFatface)" >Abril Fatface</p>
+                        <button onclick="addToFontList('AbrilFatface')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--AdventPro)">Advent Pro</p>
+                        <button onclick="addToFontList('AdventPro')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--AnimaticSC)">Animatic SC</p>
+                        <button onclick="addToFontList('AnimaticSC')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bangers)">Bangers</p>
+                        <button onclick="addToFontList('Bangers')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bebas-Nueue)">Bebas Nueue</p>
+                        <button onclick="addToFontList('Bebas-Nueue')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee)">Bungee</p>
+                        <button onclick="addToFontList('Bungee')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungree-Hairline)">Bungree Hairline</p>
+                        <button onclick="addToFontList('Bungree-Hairline')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee-Inline)">Bungree Inline</p>
+                        <button onclick="addToFontList('Bungee-Inline')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Bungee-Shade)">Bungree Shade</p>
+                        <button onclick="addToFontList('Bungee-Shade')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Cinzel)">Cinzel</p>
+                        <button onclick="addToFontList('Cinzel')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Fascinate)">Fascinate</p>
+                        <button onclick="addToFontList('Fascinate')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Great-Vibes)">Great Vibes</p>
+                        <button onclick="addToFontList('Great-Vibes')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Homeade-Apple)">Homeade Apple</p>
+                        <button onclick="addToFontList('Homeade-Apple')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Julius-Sans-One)">Julius Sans One</p>
+                        <button onclick="addToFontList('Julius-Sans-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Limelight)">Limelight</p>
+                        <button onclick="addToFontList('Limelight')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Londrina-Shadow)">Londrina Shadow</p>
+                        <button onclick="addToFontList('Londrina-Shadow')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Luckiest-Guy)">Luckiest Guy</p>
+                        <button onclick="addToFontList('Luckiest-Guy')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Major-Mono-Display)">Major Mono Display</p>
+                        <button onclick="addToFontList('Major-Mono-Display')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Monoton)">Monoton</p>
+                        <button onclick="addToFontList('Monoton')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Montserrat-Alternates)">Montserrat Alternates</p>
+                        <button onclick="addToFontList('Montserrat-Alternates')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Oi)">Oi</p>
+                        <button onclick="addToFontList('Oi')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Orbitron)">Orbitron</p>
+                        <button onclick="addToFontList('Orbitron')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Permanent-Marker)">Permanent-Marker</p>
+                        <button onclick="addToFontList('Permanent-Marker')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Poiret-One)">Poiret One</p>
+                        <button onclick="addToFontList('Poiret-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Rajdhani)">Rajdhani</p>
+                        <button onclick="addToFontList('Rajdhani')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Six-Caps)">Six-Caps</p>
+                        <button onclick="addToFontList('Six-Caps')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Syncopate)">Syncopate</p>
+                        <button onclick="addToFontList('Syncopate')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--The-Nautigal)">The Nautigal</p>
+                        <button onclick="addToFontList('The-Nautigal')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Titan-One)">Titan One</p>
+                        <button onclick="addToFontList('Titan-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Ultra)">Ultra</p>
+                        <button onclick="addToFontList('Ultra')">Use this Font</button>
+                    </div>
+                    <div class="font-card">
+                        <p style="font-family: var(--Wire-One)">Wire One</p>
+                        <button onclick="addToFontList('Wire-One')">Use this Font</button>
+                    </div>
+                    <div class="font-card-filler">
+                    </div>
+                    <div class="font-card-filler">
+                    </div>
+                </div>
+            </section>
+        </div>
+-->
