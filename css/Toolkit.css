@@ -1,0 +1,88 @@
+/*CSS for the toolkit menu*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Menu General style*/
+.menu-button {
+    position: fixed; 
+    right: 0;
+    top: 0;
+    margin: 2rem;
+    border: none;
+    background: transparent;
+    font: 3rem/1 var(--Montserrat-Alternates);
+}
+
+.side-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    width: 40vmin;
+    height: 100vmin;
+    background-color: rgb(245, 245, 245);
+    box-shadow: -5px 0px 50px var(--Light-gray);
+    transition: 0.5s;
+}
+
+.side-menu-inner-wrap {
+    margin: 2rem;
+    width: 40vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.side-menu h4 {
+    font: 4rem/1 var(--Montserrat-Alternates);
+    margin: 0 0 3rem 0;
+    border-bottom: 1px solid gray;
+}
+
+.side-menu h5 {
+    font: 3rem/1 var(--Montserrat-Alternates);
+    margin: 3rem 0 3rem 0;
+}
+
+.side-menu .fonts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.side-menu .font-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid gray;
+}
+
+.side-menu .font-item-btn {
+    margin: 0 1rem 0 1rem;
+    padding: .2rem;
+    font: 2rem/1 var(--Montserrat-Alternates);
+    background: transparent;
+    border: none;
+    color: black;
+    border-radius: 5px;
+}
+
+.side-menu .font-item-text {
+    font: 200%/1 var(--Montserrat-Alternates);
+}
+
+.side-menu .toolkit-message-wrap { 
+    flex: 1 1 auto;
+}
+
+.side-menu .toolkit-message {
+    font: 3rem/1 var(--Montserrat-Alternates);
+    margin: 3rem 0 3rem 0;
+}

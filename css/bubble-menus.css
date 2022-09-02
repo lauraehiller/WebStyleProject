@@ -1,0 +1,128 @@
+/*Collapsing Menu Style
+-------------------------------------------------------------------*/
+.element-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.collapse-menu-wrap {
+  position: relative;
+  justify-content: center;
+  display: flex; 
+}
+
+.menuButton-outer {
+  border: none;
+  background: none;
+  font: 5rem/1 var(--Montserrat-Alternates);
+  margin: 1rem;
+}
+
+.styleMenu {
+  width: 30vmin;
+  height: 20vmin;
+  border-radius: 15px;
+  position: absolute;
+  background-color: var(--Menu-background-color);
+  box-shadow: 0px 0px 20px var(--Light-gray);
+  display: none;
+  z-index: 1;
+  padding: 1.5rem;
+}
+
+.menuButton-inner {
+  position: absolute;
+  top: 0;
+  right: .4rem;
+  border: none;
+  background: none;
+  font: 5rem/1 var(--Montserrat-Alternates);
+}
+
+.styleMenu h5 {
+  margin: 1rem;
+  font: 2rem/1 var(--Montserrat-Alternates);
+}
+
+.color-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*Font Selectors
+-------------------------------------------------------------------*/
+select {
+  font-size: 2rem;
+  border-radius: 5px;
+}
+
+.font-selector {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font: 2.5rem/1 var(--Montserrat-Alternates);
+}
+
+.font-selector label {
+  margin: 1rem;
+  font: 2rem/1 var(--Montserrat-Alternates);
+}
+
+.font-selector option {
+  color: black;
+  margin: 2vmin;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.font-selector select option[value="AbrilFatface"] {
+  font-family: var(--AbrilFatface);
+}
+
+.font-selector select option[value="AdventPro"] {
+  font-family: var(--AdventPro);
+}
+
+.font-selector select option[value="AnimaticSC"] {
+  font-family: var(--AnimaticSC);
+}
+
+.font-selector select option[value="Bangers"] {
+  font-family: var(--Bangers);
+}
+
+/*Color Pickers
+-------------------------------------------------------------------*/
+.color-picker{
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;*/
+  margin: 0 0 0 2rem;
+}
+
+.color-picker label{
+  font: 2rem/1 var(--Montserrat-Alternates);
+  margin: .4rem;
+}
+
+.picker{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.picker::-webkit-color-swatch{
+  border-radius: 15px;
+  border: 2px solid white;
+  box-shadow: 3px 5px 8px #888888;
+}
+.picker::-moz-color-swatch{
+  border-radius: 15px;
+   border: 2px solid white;
+  box-shadow: 3px 5px 8px #888888; 
+}

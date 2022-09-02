@@ -1,0 +1,232 @@
+/*Color Palette
+-------------------------------------------------------------------*/
+
+/*CSS Variables
+-------------------------------------------------------------------*/
+:root {
+  /*Colors*/
+  --Site-background-color: rgb(245, 245, 245);
+  --Menu-background-color: rgb(245, 245, 245);
+  --Site-header-background-color:white;
+  
+  --Light-gray: rgb(181, 181, 181);
+
+  /*Font variables*/
+  --SectionHeading-Font: var(--Abril-Fatface);
+
+  /*Fonts*/
+  --AbrilFatface: "Abril Fatface", cursive;
+  --AdventPro: "Advent Pro", sans-serif;
+  --AnimaticSC: "Amatic SC", cursive;
+  --Bangers: "Bangers", cursive;
+  --Bebas-Nueue: "Bebas Neue", cursive;
+  --Bungee: "Bungee", cursive;
+  --Bungree-Hairline: "Bungee Hairline", cursive;
+  --Bungee-Inline: "Bungee Inline", cursive;
+  --Bungee-Shade: "Bungee Shade", cursive;
+  --Cinzel: "Cinzel", serif;
+  --Fascinate: "Fascinate", cursive;
+  --Great-Vibes: "Great Vibes", cursive;
+  --Homeade-Apple: "Homemade Apple", cursive;
+  --Julius-Sans-One: "Julius Sans One", sans-serif;
+  --Limelight: "Limelight", cursive;
+  --Londrina-Shadow: "Londrina Shadow", cursive;
+  --Luckiest-Guy: "Luckiest Guy", cursive;
+  --Major-Mono-Display: "Major Mono Display", monospace;
+  --Monoton: "Monoton", cursive;
+  --Montserrat-Alternates: "Montserrat Alternates", sans-serif;
+  --Oi: "Oi", cursive;
+  --Orbitron: "Orbitron", sans-serif;
+  --Permanent-Marker: "Permanent Marker", cursive;
+  --Poiret-One: "Poiret One", cursive;
+  --Rajdhani: "Rajdhani", sans-serif;
+  --Six-Caps: "Six Caps", sans-serif;
+  --Syncopate: "Syncopate", sans-serif;
+  --The-Nautigal: "The Nautigal", cursive;
+  --Titan-One: "Titan One", cursive;
+  --Ultra: "Ultra", serif;
+  --Wire-One: "Wire One", sans-serif;
+}
+
+/*Global Styles
+-------------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  background: var(--Site-background-color);
+  font: 2rem/1 var(--Montserrat-Alternates);
+}
+
+.content-wrap {
+  margin: 0 auto;
+  padding: 0 30vmin;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font: 4rem/1 var(--Montserrat-Alternates);
+}
+
+.hidden {
+  display: none;
+}
+
+.maincontent {
+  margin: 0 40vmin 0 0;
+  transition: 0.5s;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+*                                                                    Site Header
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+.site-header {
+  background-color: var(--Site-header-background-color);
+}
+
+.site-title {
+  display: flex;
+  justify-content: center;
+  padding: 2vmin;
+  color: black;
+  background-color: var(--Site-header-background-color);
+  font: 5rem/1 var(--Montserrat-Alternates);
+}
+
+.site-description {
+  display: flex;
+  justify-content: center;
+  padding: 2vmin;
+  color: black;
+  background-color: var(--Site-header-background-color);
+  font: 2rem/1 var(--Montserrat-Alternates);
+}
+
+/*Main Navigation Bar
+-------------------------------------------------------------------*/
+.main-navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  background-color: var(--Site-header-background-color);
+}
+
+.nav-btn{
+  display: block;
+  margin: 2rem .1rem 0 .1rem;
+  padding: 2rem;
+  color: black;
+  font: 3rem/1 var(--Montserrat-Alternates);
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.nav-btn:hover{
+  background: var(--Site-background-color);
+}
+
+.active-btn {
+  background: var(--Site-background-color);
+}
+
+.try-it-page {
+  display: block;
+}
+
+.colors-page {
+  display: none;
+}
+
+.fonts-page {
+  display: none;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+*                                                                    Main Content
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Main Heading
+-------------------------------------------------------------------*/
+.pageHeader {
+  margin: 5rem;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  font: 6rem/1 var(--Montserrat-Alternates);
+}
+
+/*Section 1
+-------------------------------------------------------------------*/
+.section1 {
+  text-align: center;
+}
+
+.section-1-heading {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font: 4rem/1 var(--Montserrat-Alternates);
+}
+
+.section-1-subheading {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  font: 3rem/1 var(--Montserrat-Alternates);
+}
+
+.section-1-paragraph {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font: 2rem/2 var(--Montserrat-Alternates);
+}
+
+/*Section 2
+-------------------------------------------------------------------*/
+.section2 {
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+}
+.section2 h3 {
+  margin: 2rem;
+  display: flex;
+  justify-content: left;
+  color: black;
+  font: 3rem/1 var(--Montserrat-Alternates);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+*                                                                    Site Footer
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+.site-footer {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font: 2rem/1 var(--Montserrat-Alternates);
+  background-color: var(--Site-header-background-color);
+}
+
